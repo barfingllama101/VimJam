@@ -1,8 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-
+using UnityEngine.Tilemaps;
 
 public class TurretPlacement : MonoBehaviour
 {
@@ -12,13 +11,9 @@ public class TurretPlacement : MonoBehaviour
     [SerializeField]
     GameObject turret;
 
-    PolygonCollider2D col;
+    [SerializeField]
+    TilemapCollider2D prohibitedArea;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        col = GetComponent<PolygonCollider2D>();
-    }
 
     // Update is called once per frame
     void Update()
@@ -26,17 +21,12 @@ public class TurretPlacement : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Vector3 spawnPos = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y));
-            if (col.OverlapPoint(spawnPos))
+            if (!prohibitedArea.OverlapPoint(spawnPos))
             {
                 Instantiate(turret, new Vector3(spawnPos.x, spawnPos.y, 0), Quaternion.identity);
 
                 //TODO: remove the placed object from the inventory
             }
         }
-    }
-
-    private void OnMouseDown()
-    {
-        
     }
 }
