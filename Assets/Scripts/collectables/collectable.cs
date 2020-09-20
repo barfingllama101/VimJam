@@ -2,18 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class collectable : MonoBehaviour
+[CreateAssetMenu]
+public class collectable : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        Debug.Log(":)");
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public string objectName;
+    public int damage;
+    public Color color = Color.green;
+  
 }
+
+
