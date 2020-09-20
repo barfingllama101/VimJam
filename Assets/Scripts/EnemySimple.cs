@@ -8,6 +8,7 @@ public class EnemySimple : EnemyBase
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        health = maxHealth;
     }
 
 

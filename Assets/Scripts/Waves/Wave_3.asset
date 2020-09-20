@@ -13,18 +13,18 @@ MonoBehaviour:
   m_Name: Wave_3
   m_EditorClassIdentifier: Assembly-CSharp::Waves
   enemies:
-  - enemyType: {fileID: 2791821507346177303, guid: ba913c781d82f6a4590f306d38719c67,
+  - enemyType: {fileID: 2887663104472815992, guid: 26c2d81483fd1f4488d89900340b8631,
       type: 3}
-    number: 4
-    interval: 0.6
+    number: 3
+    interval: 1
     timeToAppear: 0
   - enemyType: {fileID: 2791821507346177303, guid: ba913c781d82f6a4590f306d38719c67,
       type: 3}
-    number: 4
-    interval: 0.5
+    number: 3
+    interval: 2
     timeToAppear: 0.3
-  - enemyType: {fileID: 2791821507346177303, guid: ba913c781d82f6a4590f306d38719c67,
+  - enemyType: {fileID: 9139720105941629343, guid: 2464f73b5b14f3c428b28314ec732608,
       type: 3}
-    number: 5
-    interval: 0.3
-    timeToAppear: 0.7
+    number: 2
+    interval: 1
+    timeToAppear: 2
