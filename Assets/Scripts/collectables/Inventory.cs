@@ -5,7 +5,6 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     public static List<collectable> buildings = new List<collectable>();
-
     void printInventory()
     {
         foreach(collectable c in buildings)
@@ -14,5 +13,6 @@ public class Inventory : MonoBehaviour
             Debug.Log(c.damage);
         }
     }
+
    
 }

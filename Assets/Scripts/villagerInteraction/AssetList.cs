@@ -6,7 +6,7 @@ public class AssetList : MonoBehaviour
 {
     public static List<collectable> availableCollectables;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         availableCollectables = new List<collectable>();
         Object[] availableObjects = Resources.LoadAll("ourCollectables");
