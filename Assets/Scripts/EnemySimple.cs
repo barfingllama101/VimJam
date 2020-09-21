@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class EnemySimple : EnemyBase
 {
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         health = maxHealth;
+        wall = GameObject.FindGameObjectWithTag("Wall").GetComponent<Wall>();
     }
 
 
@@ -28,8 +30,7 @@ public class EnemySimple : EnemyBase
                     }
                 }
                 break;
-            case state.ATTACKING:
-                print("Do damage to wall or smth lol I haven't implemented this");
+            default:
                 break;
         }
 
