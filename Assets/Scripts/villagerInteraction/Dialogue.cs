@@ -7,16 +7,19 @@ public class Dialogue : MonoBehaviour
 {
     public TextMeshProUGUI textDisplayTMP;
     public static List<string> sentences;
-    private int index;
+    public static int index = 0;
     public float typingSpeed;
     public static bool isTalking = false;
     public GameObject continueButton;
+
+    public static bool check = false;
     IEnumerator Type()
     {
         if (isTalking)
         {
             foreach (char letter in sentences[index].ToCharArray())
             {
+              
                 textDisplayTMP.text += letter;
                 yield return new WaitForSeconds(typingSpeed);
             }
@@ -30,18 +33,23 @@ public class Dialogue : MonoBehaviour
         //continueButton.SetActive(false);
         if(index < sentences.Count - 1)
         {
+            
             StartCoroutine(Type());
             index++;
         }
         else if(index == sentences.Count - 1)
         {
+           
             textDisplayTMP.text = "";
+            check = true;
             StartCoroutine(Type());
+            
         }
         else
         {
             textDisplayTMP.text = "";
             continueButton.SetActive(false);
+
         }
     }
 

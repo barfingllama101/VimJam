@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class Villager : MonoBehaviour
 {
+    public Conversation convo;
+    public Conversation PostConvo;
     collectable gift = null;
-    public List<string> dialogue;
-
-    //if player has conversed wiht this villager, this will be true. 
-    bool conversed = false;
+    private bool hasTalked = false;
 
     /// <summary>
     /// jumble up!
@@ -17,22 +16,37 @@ public class Villager : MonoBehaviour
         // you can do this because its [n,n)
         int index = Random.Range(0, AssetList.availableCollectables.Count);
         gift = AssetList.availableCollectables[0];
+        Dialogue.index = 0;
     
     }
  void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
-            Dialogue.isTalking = true;
-            Dialogue.sentences = dialogue;
-            if (!conversed)
+            if (!hasTalked)
             {
-                Inventory.buildings.Add(gift);
-                Debug.Log(gift.objectName);
-                conversed = true;
+                DialogueManager.StartConversation(convo);
+            }
+            else if (hasTalked && DialogueManager.Instance.canGive)
+            {
+                DialogueManager.StartConversation(PostConvo);
             }
         }
+
     }
 
+    void OnCollisionExit2D(Collision2D other)
+    {
+           
+            if (!hasTalked)
+            {
+                hasTalked = true;
+            Debug.Log(gift.name);
+                Inventory.buildings.Add(gift);
+                
+                
+            }
+ 
+    }
    
 }

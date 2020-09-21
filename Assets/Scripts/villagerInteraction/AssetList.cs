@@ -14,8 +14,8 @@ public class AssetList : MonoBehaviour
         foreach (var x in availableObjects)
         {
             collectable i = x as collectable;
-            Debug.Log(i.objectName);
-            Debug.Log(x.GetType());
+         //   Debug.Log(i.objectName);
+           // Debug.Log(x.GetType());
             availableCollectables.Add(i);
         }
 
