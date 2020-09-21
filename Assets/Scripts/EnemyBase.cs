@@ -11,9 +11,9 @@ public class EnemyBase : MonoBehaviour
     [SerializeField]
     protected float speed;
 
-    [SerializeField]
-    public float health;
 
+    public float maxHealth;
+    public float health;
 
     protected Rigidbody2D rb;
     protected int currentNode;
@@ -25,6 +25,7 @@ public class EnemyBase : MonoBehaviour
     }
     protected state currentState = state.MOVING;
 
+
     private void Update()
     {
         if(health <= 0)
@@ -32,6 +33,8 @@ public class EnemyBase : MonoBehaviour
             //TODO: Die and stuff
             Destroy(gameObject);
         }
+
+        transform.GetChild(0).GetComponent<SpriteRenderer>().size = new Vector2(health / maxHealth * 1.5f, .2f);
     }
 
     protected int findNearestNode()
@@ -63,6 +66,6 @@ public class EnemyBase : MonoBehaviour
         Vector3 dir = (path.nodes[currentNode] - transform.position).normalized;
 
         rb.velocity = dir * speed;
-        transform.eulerAngles = new Vector3(0, 0, Mathf.Rad2Deg * Mathf.Atan2(dir.y, dir.x));
+        //transform.eulerAngles = new Vector3(0, 0, Mathf.Rad2Deg * Mathf.Atan2(dir.y, dir.x));
     }
 }
