@@ -11,7 +11,7 @@ public class TurretBase : MonoBehaviour
     protected float shootDelay;
 
     // Update is called once per frame
-    protected void LookAtTarget()
+    protected bool LookAtTarget()
     {
         if(targets.Count > 0)
         {
@@ -20,13 +20,16 @@ public class TurretBase : MonoBehaviour
             Vector3 dir = (pos - transform.position).normalized;
 
             transform.eulerAngles = new Vector3(0, 0, Mathf.Rad2Deg * Mathf.Atan2(dir.y,dir.x));
+            return true;
         }
+        return false;
     }
 
     protected void shoot()
     {
         if(targets.Count > 0)
             targets[0].GetComponent<EnemyBase>().health--;
+        GetComponent<ParticleSystem>().Play();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
