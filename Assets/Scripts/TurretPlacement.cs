@@ -9,24 +9,37 @@ public class TurretPlacement : MonoBehaviour
     Camera cam;
 
     [SerializeField]
-    GameObject turret;
-
-    [SerializeField]
     TilemapCollider2D prohibitedArea;
 
+    public collectable buildings;
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Vector3 spawnPos = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y));
-            if (!prohibitedArea.OverlapPoint(spawnPos))
+            if (Inventory.buildings.Contains(buildings))
             {
-                Instantiate(turret, new Vector3(spawnPos.x, spawnPos.y, 0), Quaternion.identity);
+                Vector3 spawnPos = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y));
+                if (!prohibitedArea.OverlapPoint(spawnPos))
+                {
+                    Instantiate(buildings.building, new Vector3(spawnPos.x, spawnPos.y, 0), Quaternion.identity);
 
-                //TODO: remove the placed object from the inventory
+                    Inventory.buildings.Remove(buildings);
+                }
             }
         }
     }
+
+    public void setActiveBuilding(collectable building)
+    {
+        buildings = building;
+    }
+
+    //Test function
+    public void add(collectable building)
+    {
+        Inventory.buildings.Add(building);
+    }
+
 }

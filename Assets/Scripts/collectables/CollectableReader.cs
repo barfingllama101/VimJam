@@ -12,7 +12,6 @@ public class CollectableReader : MonoBehaviour
     void Start()
     {
         name = collectable.objectName;
-        damage = collectable.damage;
     }
 
    
