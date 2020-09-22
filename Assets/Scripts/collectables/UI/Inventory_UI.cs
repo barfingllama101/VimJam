@@ -15,7 +15,8 @@ public class Inventory_UI : MonoBehaviour
     public void SetUp(int count, collectable collect)
     {
         building = collect;
-
+        transform.GetChild(0).GetComponent<UnityEngine.UI.Image>().sprite = building.sprite;
+        transform.GetChild(1).GetComponent<Text>().text = building.objectName;
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<TurretPlacement>();
 
         //GetComponent<RectTransform>().localPosition = new Vector3(0, -200 * count + 500, 0);

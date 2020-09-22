@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: naruto
   m_EditorClassIdentifier: 
   objectName: Naruto
-  damage: 10
+  building: {fileID: 0}
+  sprite: {fileID: 0}
   color: {r: 0, g: 1, b: 0, a: 1}

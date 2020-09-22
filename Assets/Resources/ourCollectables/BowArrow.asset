@@ -15,4 +15,5 @@ MonoBehaviour:
   objectName: Bow and Arrow
   building: {fileID: 8225185741165158893, guid: 68d5df11056694b4c9262582ad93146a,
     type: 3}
+  sprite: {fileID: 21300000, guid: f2c34e95cee9dd44aa4eacf90c536be6, type: 3}
   color: {r: 0, g: 1, b: 0, a: 1}
