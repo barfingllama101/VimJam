@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WaveManager : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class WaveManager : MonoBehaviour
 
     [SerializeField]
     Waves[] waves;
+
+    [SerializeField]
+    Text text;
 
     public bool inWave = false;
     public int waveCounter = 0;
@@ -38,18 +42,16 @@ public class WaveManager : MonoBehaviour
                 }
             }
         }
-        else
-        {
-            if (Input.GetKeyDown(KeyCode.P))
-            {
-                PlayerReady();
-            }
-        }
     }
 
     //When the player is ready for a new wave
-    void PlayerReady()
+    public void PlayerReady()
     {
+        if (inWave)
+            return;
+
+        text.text = "In Wave " + (waveCounter + 1);
+
         //Give spawners the proper wave info
         for (int i = 0; i < spawners.Length; i++)
         {
@@ -67,6 +69,8 @@ public class WaveManager : MonoBehaviour
 
     void WaveEnd()
     {
+        text.text = "Wave " + (waveCounter + 1) + " Complete!";
+
         inWave = false;
         waveCounter++;
         print("wave has ended");
