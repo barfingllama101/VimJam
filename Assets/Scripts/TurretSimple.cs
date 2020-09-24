@@ -8,9 +8,11 @@ public class TurretSimple : TurretBase
 
     private void Update()
     {
-        LookAtTarget();
-
         timer += Time.deltaTime;
+
+        if (!LookAtTarget())
+            return;
+
         if(timer > shootDelay)
         {
             timer = 0;

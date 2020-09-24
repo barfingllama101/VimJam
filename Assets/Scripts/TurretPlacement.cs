@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.UI;
 
 public class TurretPlacement : MonoBehaviour
 {
@@ -9,24 +10,40 @@ public class TurretPlacement : MonoBehaviour
     Camera cam;
 
     [SerializeField]
-    GameObject turret;
-
-    [SerializeField]
     TilemapCollider2D prohibitedArea;
 
+    [SerializeField]
+    Transform content;
 
-    // Update is called once per frame
-    void Update()
+    [SerializeField]
+    GameObject UIElement;
+
+    public void placeBuilding(collectable building)
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Inventory.buildings.Contains(building))
         {
             Vector3 spawnPos = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y));
             if (!prohibitedArea.OverlapPoint(spawnPos))
             {
-                Instantiate(turret, new Vector3(spawnPos.x, spawnPos.y, 0), Quaternion.identity);
+                Instantiate(building.building, new Vector3(spawnPos.x, spawnPos.y, 0), Quaternion.identity);
 
-                //TODO: remove the placed object from the inventory
+                Inventory.buildings.Remove(building);
+
+                building = null;
             }
         }
+        else
+        {
+            Debug.Log("ERROR: This shouldn't be happening! Something's wrong! panic! AAAAA!");
+        }
     }
+
+    //Test function
+    public void add(collectable building)
+    {
+        Inventory.buildings.Add(building);
+        Inventory_UI ui = Instantiate(UIElement, content).GetComponent<Inventory_UI>();
+        ui.SetUp(Inventory.buildings.Count, building);
+    }
+
 }

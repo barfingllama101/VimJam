@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d156df34137f612488ceca8e5287bb21, type: 3}
-  m_Name: naruto
+  m_Name: SimpleTurret
   m_EditorClassIdentifier: 
-  objectName: Naruto
-  building: {fileID: 0}
-  sprite: {fileID: 0}
+  objectName: Simple Turret
+  building: {fileID: 8225185741165158893, guid: 16e695b846916c7448c635c2456e0343,
+    type: 3}
+  sprite: {fileID: 21300000, guid: 7ed19f623808da244a20e8314d87d0a5, type: 3}
   color: {r: 0, g: 1, b: 0, a: 1}

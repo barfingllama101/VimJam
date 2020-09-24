@@ -6,8 +6,8 @@ using UnityEngine;
 public class collectable : ScriptableObject
 {
     public string objectName;
+    public GameObject building;
     public Sprite sprite;
-    public int damage;
     public Color color = Color.green;
   
 }

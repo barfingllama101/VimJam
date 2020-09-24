@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d156df34137f612488ceca8e5287bb21, type: 3}
-  m_Name: naruto
+  m_Name: BowArrow
   m_EditorClassIdentifier: 
-  objectName: Naruto
-  building: {fileID: 0}
-  sprite: {fileID: 0}
+  objectName: Bow and Arrow
+  building: {fileID: 8225185741165158893, guid: 68d5df11056694b4c9262582ad93146a,
+    type: 3}
+  sprite: {fileID: 21300000, guid: f2c34e95cee9dd44aa4eacf90c536be6, type: 3}
   color: {r: 0, g: 1, b: 0, a: 1}
