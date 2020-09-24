@@ -28,7 +28,6 @@ public class Inventory_UI : MonoBehaviour
         if (beingDragged)
         {
             GetComponent<RectTransform>().position = Input.mousePosition;
-            print(GetComponent<RectTransform>().position);
         }
     }
 

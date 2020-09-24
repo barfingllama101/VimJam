@@ -12,6 +12,11 @@ public class DialogueManager : MonoBehaviour
     private Conversation currConvo;
     public bool canGive = false;
 
+    [SerializeField]
+    CanvasGroup cg;
+
+    public static bool isTalking = false;
+
     private Coroutine typing;
     private void Awake()
     {
@@ -24,12 +29,26 @@ public class DialogueManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    private void Update()
+    {
+        if (isTalking)
+        {
+            cg.alpha = 1;
+        }
+        else
+        {
+            cg.alpha = 0;
+        }
+    }
+
     public static DialogueManager Instance
     {
         get { return instance; }
     }
     public static void StartConversation(Conversation conversation)
     {
+        isTalking = true;
         instance.currentIndex =  0;
         instance.currConvo = conversation;
         instance.speakerName.text = "";

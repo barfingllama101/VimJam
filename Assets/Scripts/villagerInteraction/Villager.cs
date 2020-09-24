@@ -15,7 +15,7 @@ public class Villager : MonoBehaviour
     void Start() {
         // you can do this because its [n,n)
         int index = Random.Range(0, AssetList.availableCollectables.Count);
-        gift = AssetList.availableCollectables[0];
+        gift = AssetList.availableCollectables[index];
         Dialogue.index = 0;
     
     }
@@ -38,14 +38,15 @@ public class Villager : MonoBehaviour
     void OnCollisionExit2D(Collision2D other)
     {
            
-            if (!hasTalked)
-            {
-                hasTalked = true;
+        if (!hasTalked)
+        {
+            hasTalked = true;
             Debug.Log(gift.name);
-                Inventory.buildings.Add(gift);
-                
-                
-            }
+            GameObject.FindGameObjectWithTag("Player").GetComponent<TurretPlacement>().add(gift);
+            
+            
+        }
+        DialogueManager.isTalking = false;
  
     }
    
