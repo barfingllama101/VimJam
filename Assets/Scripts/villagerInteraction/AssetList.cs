@@ -18,6 +18,6 @@ public class AssetList : MonoBehaviour
            // Debug.Log(x.GetType());
             availableCollectables.Add(i);
         }
-
+        print(availableCollectables.Count);
     }
 }

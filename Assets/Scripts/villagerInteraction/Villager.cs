@@ -17,7 +17,8 @@ public class Villager : MonoBehaviour
         int index = Random.Range(0, AssetList.availableCollectables.Count);
         gift = AssetList.availableCollectables[index];
         Dialogue.index = 0;
-    
+        Debug.Log(gift.name);
+
     }
  void OnCollisionEnter2D(Collision2D other)
     {

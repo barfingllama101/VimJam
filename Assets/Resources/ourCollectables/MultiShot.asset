@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d156df34137f612488ceca8e5287bb21, type: 3}
-  m_Name: naruto
+  m_Name: MultiShot
   m_EditorClassIdentifier: 
-  objectName: Naruto
-  building: {fileID: 0}
-  sprite: {fileID: 0}
+  objectName: Multi-Shot
+  building: {fileID: 8225185741165158893, guid: dcf7260cb5b02064d948c91d432372bb,
+    type: 3}
+  sprite: {fileID: 21300000, guid: 32006565e823bbf4096f965cb51380ca, type: 3}
   color: {r: 0, g: 1, b: 0, a: 1}
