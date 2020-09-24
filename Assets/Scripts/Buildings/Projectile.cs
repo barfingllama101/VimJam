@@ -17,6 +17,7 @@ public class Projectile : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = speed * transform.right;
+        Destroy(gameObject, 3);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

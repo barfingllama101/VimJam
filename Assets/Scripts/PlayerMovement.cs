@@ -10,12 +10,14 @@ public class PlayerMovement : MonoBehaviour
 
     Rigidbody2D rb;
     Animator anim;
+    SpriteRenderer spr;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        spr = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -28,5 +30,6 @@ public class PlayerMovement : MonoBehaviour
 
         anim.SetBool("IsMoving",(Mathf.Abs(hor) > 0 || Mathf.Abs(ver) > 0));
 
+        spr.flipX = hor < 0;
     }
 }

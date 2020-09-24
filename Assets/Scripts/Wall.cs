@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Wall : MonoBehaviour
 {
@@ -19,7 +20,7 @@ public class Wall : MonoBehaviour
         if(health <= 0)
         {
             //Loose condition
-            print("Wall down! you suck lol");
+            SceneManager.LoadScene("Lose");
         }
     }
 }

@@ -9,6 +9,8 @@ public class Villager : MonoBehaviour
     collectable gift = null;
     private bool hasTalked = false;
 
+    private bool inConvo = false;
+
     /// <summary>
     /// jumble up!
     /// </summary>
@@ -24,6 +26,7 @@ public class Villager : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            inConvo = true;
             if (!hasTalked)
             {
                 DialogueManager.StartConversation(convo);
@@ -36,17 +39,21 @@ public class Villager : MonoBehaviour
 
     }
 
+    private void Update()
+    {
+        if (!hasTalked && inConvo && DialogueManager.Instance.canGive)
+        {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<TurretPlacement>().add(gift);
+            Debug.Log(gift.name);
+            hasTalked = true;
+        }
+
+    }
+
     void OnCollisionExit2D(Collision2D other)
     {
-           
-        if (!hasTalked)
-        {
-            hasTalked = true;
-            Debug.Log(gift.name);
-            GameObject.FindGameObjectWithTag("Player").GetComponent<TurretPlacement>().add(gift);
-            
-            
-        }
+
+        inConvo = false;
         DialogueManager.isTalking = false;
  
     }
