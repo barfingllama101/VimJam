@@ -819,7 +819,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -38.595474, y: -253.26813}
+  m_AnchoredPosition: {x: -38.595512, y: -272.75}
   m_SizeDelta: {x: 238, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &246037967
@@ -21857,7 +21857,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   convo: {fileID: 11400000, guid: dea6aede47152114a88ef8a2a6b4bc9b, type: 2}
-  PostConvo: {fileID: 11400000, guid: 873db41188ba01a4fa864add448506e5, type: 2}
+  PostConvo: {fileID: 11400000, guid: 206bef05071e612418d2dfec44fd1135, type: 2}
   waveToAppear: 4
   gift: {fileID: 11400000, guid: c1e8a775d4443bd439c81ed66a1a7389, type: 2}
 --- !u!212 &669818145
@@ -23064,7 +23064,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   convo: {fileID: 11400000, guid: b8b79d565d7a2de4599ddb5319d31dfd, type: 2}
-  PostConvo: {fileID: 11400000, guid: 873db41188ba01a4fa864add448506e5, type: 2}
+  PostConvo: {fileID: 11400000, guid: 8dd10f4a3e85cfd44a8eea157adf9d17, type: 2}
   waveToAppear: 3
   gift: {fileID: 11400000, guid: b3f5398b272a32141bcb30f118ffc6b6, type: 2}
 --- !u!212 &1238732035
@@ -24001,7 +24001,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1730960445}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.49999988
+  m_Size: 0.49999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -24602,7 +24602,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   convo: {fileID: 11400000, guid: e682cfef6477b074fb8b85d1e3d70161, type: 2}
-  PostConvo: {fileID: 11400000, guid: 873db41188ba01a4fa864add448506e5, type: 2}
+  PostConvo: {fileID: 11400000, guid: ca947f3004a58604597c832895fe09dc, type: 2}
   waveToAppear: 5
   gift: {fileID: 11400000, guid: b3f5398b272a32141bcb30f118ffc6b6, type: 2}
 --- !u!212 &1917472862
@@ -25283,7 +25283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   convo: {fileID: 11400000, guid: f4e0b4b4a975a3146baba4d41214c407, type: 2}
-  PostConvo: {fileID: 11400000, guid: 873db41188ba01a4fa864add448506e5, type: 2}
+  PostConvo: {fileID: 11400000, guid: 1600b38322b495144a46869aa7da373c, type: 2}
   waveToAppear: 2
   gift: {fileID: 11400000, guid: c1e8a775d4443bd439c81ed66a1a7389, type: 2}
 --- !u!212 &2094781329
