@@ -776,7 +776,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -38.595448, y: -253.26813}
+  m_AnchoredPosition: {x: -38.595425, y: -253.26813}
   m_SizeDelta: {x: 238, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &246037967
@@ -23958,7 +23958,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1730960445}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.49999988
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -25113,7 +25113,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2056570684}
-  - component: {fileID: 2056570683}
   - component: {fileID: 2056570682}
   - component: {fileID: 2056570685}
   m_Layer: 0
@@ -25138,25 +25137,11 @@ MonoBehaviour:
   speakerName: {fileID: 1362166791}
   dialogue: {fileID: 983066847}
   nextBTN: {fileID: 663372222}
+  nxt: {fileID: 1983315563}
   speakerSprite: {fileID: 2014026313}
   canGive: 0
   canCheckGiveDirty: 0
   cg: {fileID: 2043158593}
---- !u!114 &2056570683
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2056570681}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8970076581a1534daf08c7af9d9493a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textDisplayTMP: {fileID: 0}
-  typingSpeed: 0.8
-  continueButton: {fileID: 0}
 --- !u!4 &2056570684
 Transform:
   m_ObjectHideFlags: 0

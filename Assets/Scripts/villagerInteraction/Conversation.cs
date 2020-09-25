@@ -17,4 +17,5 @@ public class Conversation : ScriptableObject
     {
         return allLines.Length - 1;
     }
+   
 }

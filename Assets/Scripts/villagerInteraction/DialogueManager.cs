@@ -6,6 +6,7 @@ using TMPro;
 public class DialogueManager : MonoBehaviour
 {
     public TextMeshProUGUI speakerName, dialogue, nextBTN;
+    public Button nxt;
     public Image speakerSprite;
     private static DialogueManager instance;
     private int currentIndex;
@@ -19,9 +20,15 @@ public class DialogueManager : MonoBehaviour
     public static bool isTalking = false;
 
     private Coroutine typing;
+
+    public Coroutine typetype
+    {
+        get { return typing; }
+        set { typing = value; }
+    }
     private void Awake()
     {
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
         }
@@ -36,12 +43,16 @@ public class DialogueManager : MonoBehaviour
         if (isTalking)
         {
             cg.alpha = 1;
-           
+
         }
         else
         {
             cg.alpha = 0;
         }
+    }
+    public  TextMeshProUGUI btn
+    {
+        get { return nextBTN; }
     }
 
     public static DialogueManager Instance
@@ -56,28 +67,38 @@ public class DialogueManager : MonoBehaviour
         instance.speakerName.text = "";
         instance.dialogue.text = "";
         instance.nextBTN.text = ">";
-
         instance.readNext();
+    }
+    public void stopConvo() {
+        Debug.Log("stop it");
     }
     public void readNext()
     {
-
+        Debug.Log(instance.currentIndex);
         if (currentIndex > currConvo.getLength())
         {
+            
             return;
         }
-        if(currentIndex == currConvo.getLength())
+        if (currConvo.getLength() == 0)
         {
-            Debug.Log("here");
+            nxt.gameObject.SetActive(false);
+        }
+        else
+        {
+            nxt.gameObject.SetActive(true);
+        }
+        if (currentIndex == currConvo.getLength())
+        {
             instance.canCheckGiveDirty = true;
         }
+    
         speakerName.text= currConvo.GetLineByIndex(currentIndex).villager.GetName();
         if (typing == null)
         {
             typing = instance.StartCoroutine(Type(currConvo.GetLineByIndex(currentIndex).dialogue));
         }
         else{
-           
             instance.StopCoroutine(typing);
             typing = null;
             typing = instance.StartCoroutine(Type(currConvo.GetLineByIndex(currentIndex).dialogue));
@@ -96,7 +117,7 @@ public class DialogueManager : MonoBehaviour
             dialogue.text += text[index];
             index++;
             yield return new WaitForSeconds(0.02f);
-            if(index == text.Length/* - 1*/)
+            if(index == text.Length)
             {
                
                 complete = true;

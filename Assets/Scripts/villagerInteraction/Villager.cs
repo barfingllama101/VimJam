@@ -9,7 +9,6 @@ public class Villager : MonoBehaviour
     private bool hasTalked = false;
 
     private bool inConvo = false;
-
     [SerializeField]
     int waveToAppear;
     bool appeared = true;
@@ -22,9 +21,8 @@ public class Villager : MonoBehaviour
     /// </summary>
     void Start() {
         // you can do this because its [n,n)
-        int index = Random.Range(0, AssetList.availableCollectables.Count);
-        Dialogue.index = 0;
-        Debug.Log(gift.name);
+       // int index = Random.Range(0, AssetList.availableCollectables.Count);
+       // Debug.Log(gift.name);
 
         if(waveToAppear > 0)
         {
@@ -46,7 +44,7 @@ public class Villager : MonoBehaviour
             else if (hasTalked && !DialogueManager.Instance.canGive)
             {
                 DialogueManager.StartConversation(PostConvo);
-
+          
             }
         }
 
@@ -62,8 +60,9 @@ public class Villager : MonoBehaviour
             hasTalked = true;
             DialogueManager.isTalking = false;
             DialogueManager.Instance.canGive = false;
+            DialogueManager.Instance.canCheckGiveDirty = false;
+           
         }
-
         if (!appeared && WaveManager.waveCounter >= waveToAppear)
         {
             GetComponent<SpriteRenderer>().enabled = true;
@@ -75,7 +74,6 @@ public class Villager : MonoBehaviour
     { 
         inConvo = false;
         DialogueManager.isTalking = false;
- 
     }
    
 }
