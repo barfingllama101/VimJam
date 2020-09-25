@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sentences: []
   speakerName: Bob
-  speakerSprite: {fileID: 21300000, guid: 2814a92a582e8964585088771d683273, type: 3}
+  speakerSprite: {fileID: 21300000, guid: 8cccb35256d438a4cb51dafba0f3d091, type: 3}

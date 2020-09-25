@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sentences: []
   speakerName: Sad Man
-  speakerSprite: {fileID: 21300000, guid: 2814a92a582e8964585088771d683273, type: 3}
+  speakerSprite: {fileID: 21300000, guid: b3bd86ff7c6a5444981b812ba61e6217, type: 3}
