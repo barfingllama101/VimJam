@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+/// <summary>
+/// DONT LOOK AT ME IM UGLY :( 
+/// </summary>
 public class DialogueManager : MonoBehaviour
 {
     public TextMeshProUGUI speakerName, dialogue, nextBTN;
@@ -42,7 +45,6 @@ public class DialogueManager : MonoBehaviour
     {
         if (isTalking)
         {
-            Debug.Log("it is");
             cg.alpha = 1;
 
         }
@@ -69,9 +71,6 @@ public class DialogueManager : MonoBehaviour
         instance.dialogue.text = "";
         instance.nextBTN.text = ">";
         instance.readNext();
-    }
-    public void stopConvo() {
-        Debug.Log("stop it");
     }
     public void readNext()
     {
