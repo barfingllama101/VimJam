@@ -43,7 +43,7 @@ public class Villager : MonoBehaviour
             {
                 DialogueManager.StartConversation(convo);
             }
-            else if (hasTalked && DialogueManager.Instance.canGive)
+            else if (hasTalked && !DialogueManager.Instance.canGive)
             {
                 DialogueManager.StartConversation(PostConvo);
             }
