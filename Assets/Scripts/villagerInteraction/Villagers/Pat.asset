@@ -9,12 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: Wave_2
-  m_EditorClassIdentifier: Assembly-CSharp::Waves
-  enemies:
-  - enemyType: {fileID: 9139720105941629343, guid: 2464f73b5b14f3c428b28314ec732608,
-      type: 3}
-    number: 5
-    interval: 1
-    timeToAppear: 2
+  m_Script: {fileID: 11500000, guid: 757a5286e8df4f84c828911de1940a2b, type: 3}
+  m_Name: Pat
+  m_EditorClassIdentifier: 
+  sentences: []
+  speakerName: Pat
+  speakerSprite: {fileID: 21300000, guid: 2814a92a582e8964585088771d683273, type: 3}

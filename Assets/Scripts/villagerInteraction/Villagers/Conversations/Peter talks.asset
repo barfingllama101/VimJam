@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72514ee1a18ae1245a55edf813834b86, type: 3}
+  m_Name: Peter talks
+  m_EditorClassIdentifier: 
+  allLines:
+  - villager: {fileID: 11400000, guid: ce7e32654789427428182dbf1b725f30, type: 2}
+    dialogue: So I had this thing, you know.
+  - villager: {fileID: 11400000, guid: ce7e32654789427428182dbf1b725f30, type: 2}
+    dialogue: And it shot a bunch of stuff.
+  - villager: {fileID: 11400000, guid: ce7e32654789427428182dbf1b725f30, type: 2}
+    dialogue: But then I thought...
+  - villager: {fileID: 11400000, guid: ce7e32654789427428182dbf1b725f30, type: 2}
+    dialogue: What if I just put them together?
+  - villager: {fileID: 11400000, guid: ce7e32654789427428182dbf1b725f30, type: 2}
+    dialogue: Now it shoots a whole bunch of stuff.
+  - villager: {fileID: 11400000, guid: ce7e32654789427428182dbf1b725f30, type: 2}
+    dialogue: Try it out, it's great.

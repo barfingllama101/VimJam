@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allLines:
   - villager: {fileID: 11400000, guid: b3d8c71a98be57a44a27883357e83369, type: 2}
-    dialogue: How's it hanging?
-  - villager: {fileID: 11400000, guid: 827d80cff17629c41b4c858f2379f59f, type: 2}
-    dialogue: I'm tired, but Im here to help!
+    dialogue: Hey, we really need you to defend us. I have something that might help.
+  - villager: {fileID: 11400000, guid: b3d8c71a98be57a44a27883357e83369, type: 2}
+    dialogue: Click and drag it from your inventory to place it anywhere you want!
+  - villager: {fileID: 11400000, guid: b3d8c71a98be57a44a27883357e83369, type: 2}
+    dialogue: (Just try not to put it somewhere dumb)

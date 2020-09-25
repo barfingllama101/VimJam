@@ -18,7 +18,7 @@ public class WaveManager : MonoBehaviour
     Text text;
 
     public bool inWave = false;
-    public int waveCounter = 0;
+    public static int waveCounter = 0;
 
     int enemiesLeft;
     // Update is called once per frame
@@ -76,7 +76,7 @@ public class WaveManager : MonoBehaviour
         waveCounter++;
         print("wave has ended");
 
-        if(waveCounter > waves.Length)
+        if(waveCounter >= waves.Length)
         {
             SceneManager.LoadScene("Win");
         }
