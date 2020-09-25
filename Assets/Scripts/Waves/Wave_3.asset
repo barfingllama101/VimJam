@@ -18,7 +18,8 @@ MonoBehaviour:
     number: 5
     interval: 1
     timeToAppear: 0
-  - enemyType: {fileID: 0}
+  - enemyType: {fileID: 2887663104472815992, guid: 26c2d81483fd1f4488d89900340b8631,
+      type: 3}
     number: 10
     interval: 0.25
     timeToAppear: 2
