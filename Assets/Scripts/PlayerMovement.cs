@@ -33,3 +33,17 @@ public class PlayerMovement : MonoBehaviour
         spr.flipX = hor < 0;
     }
 }
+
+
+
+
+
+//AAAAAAAAAAAAAA I DON"T KNOW WHERE TO PUT HTIS
+[System.Serializable]
+public struct waveEnemy
+{
+    public GameObject enemyType;    //What type of enemy to spawn
+    public int number;              //How many enemies to spawn
+    public float interval;          //delay between each enemy spawn
+    public float timeToAppear;     //When the enemy appears
+}
