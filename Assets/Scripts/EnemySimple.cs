@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemySimple : EnemyBase
 {
@@ -25,8 +26,10 @@ public class EnemySimple : EnemyBase
                     currentNode++;
                     if (currentNode >= path.nodes.Length)
                     {
-                        currentState = state.ATTACKING;
-                        rb.velocity = Vector2.zero;
+                        //Health system was gonna be here but screw it you just lose
+                        SceneManager.LoadScene("Lose");
+                        //currentState = state.ATTACKING;
+                        //rb.velocity = Vector2.zero;
                     }
                 }
                 break;

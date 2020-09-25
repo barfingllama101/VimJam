@@ -81,4 +81,18 @@ public class WaveManager : MonoBehaviour
             SceneManager.LoadScene("Win");
         }
     }
+
+
+    public void speedUp()
+    {
+        if(Time.timeScale == 1)
+        {
+            Time.timeScale = 3;
+        }
+        else
+        {
+            Time.timeScale = 1;
+        }
+    }
+
 }
