@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// DONT LOOK AT ME IM UGLY :( 
+/// </summary>
 public class Villager : MonoBehaviour
 {
     public Conversation convo;
@@ -12,7 +14,7 @@ public class Villager : MonoBehaviour
     [SerializeField]
     int waveToAppear;
     bool appeared = true;
-
+    private bool JANKY = false;
     [SerializeField]
     collectable gift = null;
 
@@ -39,10 +41,12 @@ public class Villager : MonoBehaviour
             inConvo = true;
             if (!hasTalked)
             {
+                DialogueManager.isTalking = true;
                 DialogueManager.StartConversation(convo);
             }
             else if (hasTalked && !DialogueManager.Instance.canGive)
             {
+     
                 DialogueManager.isTalking = true;
                 DialogueManager.StartConversation(PostConvo);
           
@@ -67,6 +71,16 @@ public class Villager : MonoBehaviour
         if(hasTalked && inConvo)
         {
             DialogueManager.isTalking = true;
+            JANKY = true;
+        }
+        else if(hasTalked && JANKY)
+        {
+            DialogueManager.Instance.canCheckGiveDirty = false;
+            JANKY = false;
+        }
+        else
+        {
+            JANKY = false;
         }
         if (!appeared && WaveManager.waveCounter >= waveToAppear)
         {
