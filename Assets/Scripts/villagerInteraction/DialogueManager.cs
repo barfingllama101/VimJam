@@ -42,6 +42,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (isTalking)
         {
+            Debug.Log("it is");
             cg.alpha = 1;
 
         }
@@ -91,8 +92,13 @@ public class DialogueManager : MonoBehaviour
         if (currentIndex == currConvo.getLength())
         {
             instance.canCheckGiveDirty = true;
+            nxt.gameObject.SetActive(false);
         }
-    
+        else
+        {
+            nxt.gameObject.SetActive(true);
+        }
+
         speakerName.text= currConvo.GetLineByIndex(currentIndex).villager.GetName();
         if (typing == null)
         {

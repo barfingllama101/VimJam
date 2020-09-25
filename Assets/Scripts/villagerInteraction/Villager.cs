@@ -43,6 +43,7 @@ public class Villager : MonoBehaviour
             }
             else if (hasTalked && !DialogueManager.Instance.canGive)
             {
+                DialogueManager.isTalking = true;
                 DialogueManager.StartConversation(PostConvo);
           
             }
@@ -62,6 +63,10 @@ public class Villager : MonoBehaviour
             DialogueManager.Instance.canGive = false;
             DialogueManager.Instance.canCheckGiveDirty = false;
            
+        }
+        if(hasTalked && inConvo)
+        {
+            DialogueManager.isTalking = true;
         }
         if (!appeared && WaveManager.waveCounter >= waveToAppear)
         {
