@@ -46,6 +46,7 @@ public class Villager : MonoBehaviour
             else if (hasTalked && !DialogueManager.Instance.canGive)
             {
                 DialogueManager.StartConversation(PostConvo);
+
             }
         }
 
@@ -53,16 +54,17 @@ public class Villager : MonoBehaviour
 
     private void Update()
     {
-        if (!hasTalked && inConvo && DialogueManager.Instance.canGive)
+
+        if (!hasTalked && inConvo && DialogueManager.Instance.canCheckGiveDirty)
         {
             GameObject.FindGameObjectWithTag("Player").GetComponent<TurretPlacement>().add(gift);
             Debug.Log(gift.name);
             hasTalked = true;
+            DialogueManager.isTalking = false;
             DialogueManager.Instance.canGive = false;
         }
 
-
-        if(!appeared && WaveManager.waveCounter >= waveToAppear)
+        if (!appeared && WaveManager.waveCounter >= waveToAppear)
         {
             GetComponent<SpriteRenderer>().enabled = true;
             GetComponent<BoxCollider2D>().enabled = true;
@@ -70,8 +72,7 @@ public class Villager : MonoBehaviour
     }
 
     void OnCollisionExit2D(Collision2D other)
-    {
-
+    { 
         inConvo = false;
         DialogueManager.isTalking = false;
  

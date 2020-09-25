@@ -11,6 +11,7 @@ public class DialogueManager : MonoBehaviour
     private int currentIndex;
     private Conversation currConvo;
     public bool canGive = false;
+    public bool canCheckGiveDirty = false;
 
     [SerializeField]
     CanvasGroup cg;
@@ -35,6 +36,7 @@ public class DialogueManager : MonoBehaviour
         if (isTalking)
         {
             cg.alpha = 1;
+           
         }
         else
         {
@@ -66,14 +68,13 @@ public class DialogueManager : MonoBehaviour
         }
         if(currentIndex == currConvo.getLength())
         {
-            instance.canGive = true;
+            Debug.Log("here");
+            instance.canCheckGiveDirty = true;
         }
         speakerName.text= currConvo.GetLineByIndex(currentIndex).villager.GetName();
         if (typing == null)
         {
-          
             typing = instance.StartCoroutine(Type(currConvo.GetLineByIndex(currentIndex).dialogue));
-
         }
         else{
            
