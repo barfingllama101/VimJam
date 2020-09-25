@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Gun
   m_EditorClassIdentifier: 
   objectName: Gun
-  building: {fileID: 8225185741165158893, guid: 16e695b846916c7448c635c2456e0343,
+  building: {fileID: 8225185741165158893, guid: b16e4545a1f3a3049ab01e4527d3b5ca,
     type: 3}
-  sprite: {fileID: 21300000, guid: 7ed19f623808da244a20e8314d87d0a5, type: 3}
+  sprite: {fileID: 21300000, guid: 31cd6888a4638e54f87137e150c6cdbc, type: 3}
   color: {r: 0, g: 1, b: 0, a: 1}
